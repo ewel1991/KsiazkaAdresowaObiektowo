@@ -1,3 +1,6 @@
+#ifndef UZYTKOWNIK_h
+#define UZYTKOWNIK_h
+
 #include <iostream>
 
 using namespace std;
@@ -19,3 +22,5 @@ public:
 
 };
 
+
+#endif
