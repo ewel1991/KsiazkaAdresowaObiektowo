@@ -28,6 +28,7 @@ class UzytkownikManager
 
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
+    void wczytajUzytkownikowZPliku();
 };
 
 #endif
