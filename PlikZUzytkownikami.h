@@ -30,6 +30,7 @@ public:
     };
     void dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik);
     vector <Uzytkownik> wczytajUzytkownikowZPliku();
+    string konwerjsaIntNaString(int liczba);
 
 };
 

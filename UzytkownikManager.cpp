@@ -1,5 +1,6 @@
 #include "UzytkownikManager.h"
 
+
 void UzytkownikManager::rejestracjaUzytkownika()
 {
     Uzytkownik uzytkownik = podajDaneNowegoUzytkownika();
@@ -78,6 +79,7 @@ int UzytkownikManager:: logowanieUzytkownika()
 
     Uzytkownik uzytkownik;
     string login = "", haslo = "";
+    int id = 0;
 
     cout << endl << "Podaj login: ";
     cin >> login;
@@ -97,9 +99,12 @@ int UzytkownikManager:: logowanieUzytkownika()
                 if (uzytkownicy[i].pobierzHaslo() == haslo)
                 {
                     cout << endl << "Zalogowales sie." << endl << endl;
-                    cout << endl << "Twoje id to: " << uzytkownicy[i].pobierzId() << endl;
+                    id = uzytkownicy[i].pobierzId();
+                    cout << uzytkownicy[i].pobierzId() << endl;
+                    ustawIdZalogowanegoUzytkownika(id);
                     system("pause");
-                    return uzytkownicy[i].pobierzId();
+                    return idZalogowanegoUzytkownika;
+
 
                 }
             }
@@ -112,4 +117,20 @@ int UzytkownikManager:: logowanieUzytkownika()
     system("pause");
     return 0;
 
+}
+
+
+void UzytkownikManager::ustawIdZalogowanegoUzytkownika(int noweId)
+{
+
+    if (noweId >=0)
+        idZalogowanegoUzytkownika = noweId;
+
+}
+
+void UzytkownikManager:: wylogowanieUzytkownika()
+{
+    idZalogowanegoUzytkownika = 0;
+    adresaci.clear();
+    cout << "Oto wszyscy adresaci:";
 }

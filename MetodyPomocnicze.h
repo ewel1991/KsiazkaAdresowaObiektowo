@@ -1,5 +1,5 @@
 #ifndef METODYPOMOCNICZE_h
-#define KSIAZKAADRESOWA_h
+#define METODYPOMOCNICZE_h
 
 
 
