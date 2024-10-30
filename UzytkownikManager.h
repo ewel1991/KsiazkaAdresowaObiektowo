@@ -31,6 +31,7 @@ class UzytkownikManager
     void rejestracjaUzytkownika();
     int logowanieUzytkownika();
     void wylogowanieUzytkownika();
+    void zmianaHaslaZalogowanegoUzytkownika();
     void wypiszWszystkichUzytkownikow();
     void wczytajUzytkownikowZPliku();
     void ustawIdZalogowanegoUzytkownika(int noweId);
