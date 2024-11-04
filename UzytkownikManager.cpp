@@ -78,9 +78,8 @@ int UzytkownikManager:: logowanieUzytkownika()
 {
 
     Uzytkownik uzytkownik;
-    string login = "", haslo = "";
-    int id = 0;
 
+    string login = "", haslo = "";
     cout << endl << "Podaj login: ";
     cin >> login;
     uzytkownik.ustawLogin(login);
@@ -99,39 +98,34 @@ int UzytkownikManager:: logowanieUzytkownika()
                 if (uzytkownicy[i].pobierzHaslo() == haslo)
                 {
                     cout << endl << "Zalogowales sie." << endl << endl;
-                    id = uzytkownicy[i].pobierzId();
-                    cout << uzytkownicy[i].pobierzId() << endl;
-                    ustawIdZalogowanegoUzytkownika(id);
+                    idZalogowanegoUzytkownika = uzytkownicy[i].pobierzId();
+                    cout << idZalogowanegoUzytkownika << endl;
+
                     system("pause");
                     return idZalogowanegoUzytkownika;
 
 
                 }
             }
+
             cout << "Wprowadzono 3 razy bledne haslo." << endl;
             system("pause");
             return 0;
+
         }
     }
     cout << "Nie ma uzytkownika z takim loginem" << endl << endl;
     system("pause");
     return 0;
 
-}
-
-
-void UzytkownikManager::ustawIdZalogowanegoUzytkownika(int noweId)
-{
-
-    if (noweId >=0)
-        idZalogowanegoUzytkownika = noweId;
 
 }
+
 
 void UzytkownikManager:: wylogowanieUzytkownika()
 {
     idZalogowanegoUzytkownika = 0;
-    adresaci.clear();
+    //adresaci.clear();
     cout << "Oto wszyscy adresaci:";
 }
 
@@ -142,7 +136,7 @@ void UzytkownikManager:: zmianaHaslaZalogowanegoUzytkownika()
     cout << "Podaj nowe haslo: ";
     cin >> noweHaslo;
 
-     for (int i = 0; i < uzytkownicy.size(); i++)
+    for (int i = 0; i < uzytkownicy.size(); i++)
     {
         if (uzytkownicy[i].pobierzId()== idZalogowanegoUzytkownika)
         {
@@ -152,4 +146,16 @@ void UzytkownikManager:: zmianaHaslaZalogowanegoUzytkownika()
         }
     }
     plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
+}
+
+
+void UzytkownikManager::ustawIdZalogowanegoUzytkownika (int noweeId)
+{
+    if (noweeId >=0)
+        idZalogowanegoUzytkownika = noweeId;
+}
+
+int UzytkownikManager::pobierzIdZalogowanegoUzytkownika()
+{
+    return idZalogowanegoUzytkownika;
 }
