@@ -35,10 +35,12 @@ vector <Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(
     if (daneOstaniegoAdresataWPliku != "")
     {
         idOstatniegoAdresata = pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(daneOstaniegoAdresataWPliku);
-        return adresaci;
+
     }
     else
-        return adresaci;
+        idOstatniegoAdresata = 0;
+
+       return adresaci;
 }
 
 

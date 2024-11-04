@@ -10,7 +10,8 @@ void KsiazkaAdresowa::logowanieUzytkownika()
     idZalogowanegoUzytkownika= uzytkownikManager.logowanieUzytkownika();
     cout << idZalogowanegoUzytkownika << endl;
     adresatManager.ustawIdZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
-
+    adresatManager.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+    adresatManager.wyswietlWszystkichAdresatow();
 
 }
 
@@ -30,11 +31,10 @@ void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika()
     uzytkownikManager.zmianaHaslaZalogowanegoUzytkownika();
 }
 
-void KsiazkaAdresowa::wypiszWszystkichAdresatow()
+void KsiazkaAdresowa::wyswietlWszystkichAdresatow()
 {
-    adresatManager.wypiszWszystkichAdresatow();
+    adresatManager.wyswietlWszystkichAdresatow();
 }
-
 
 
 

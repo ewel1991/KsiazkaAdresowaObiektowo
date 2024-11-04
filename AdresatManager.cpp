@@ -9,7 +9,7 @@ void AdresatManager::ustawIdZalogowanegoUzytkownika (int noweId)
         idZalogowanegoUzytkownika = noweId;
 }
 
-void AdresatManager:: wyswietlWszystkichAdresatow(vector <Adresat> &adresaci)
+void AdresatManager:: wyswietlWszystkichAdresatow()
 {
     system("cls");
     if (!adresaci.empty())
@@ -30,4 +30,17 @@ void AdresatManager:: wyswietlWszystkichAdresatow(vector <Adresat> &adresaci)
 }
 
 
+void AdresatManager::wyswietlDaneAdresata(Adresat adresat)
+{
+    cout << endl << "Id:                 " << adresat.pobierzId() << endl;
+    cout << "Imie:               " << adresat.pobierzImie() << endl;
+    cout << "Nazwisko:           " << adresat.pobierzNazwisko() << endl;
+    cout << "Numer telefonu:     " << adresat.pobierzNumerTelefonu() << endl;
+    cout << "Email:              " << adresat.pobierzEmail() << endl;
+    cout << "Adres:              " << adresat.pobierzAdres() << endl;
+}
 
+void AdresatManager::wczytajAdresatowZalogowanegoUzytkownikaZPliku()
+{
+    adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
+}

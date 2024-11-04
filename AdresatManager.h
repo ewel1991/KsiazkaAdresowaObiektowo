@@ -20,15 +20,18 @@ class AdresatManager
     PlikZAdresatami plikZAdresatami;
 
 
+    void wyswietlDaneAdresata(Adresat adresat);
+
+
     public:
     AdresatManager(string nazwaPlikuZAdresatami) :
         plikZAdresatami (nazwaPlikuZAdresatami)
     {
-        adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
     };
 
-    void wypiszWszystkichAdresatow();
     void ustawIdZalogowanegoUzytkownika (int noweId);
+    void wyswietlWszystkichAdresatow();
+    void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
 
 
 
