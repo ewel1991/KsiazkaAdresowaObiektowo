@@ -9,6 +9,7 @@
 #include <cstdlib>
 
 #include "Adresat.h"
+#include "Uzytkownik.h"
 #include "PlikZAdresatami.h"
 
 using namespace std;

@@ -10,7 +10,6 @@ void AdresatManager::ustawIdZalogowanegoUzytkownika (int noweId)
 }
 
 
-
 void AdresatManager:: wyswietlWszystkichAdresatow()
 {
     system("cls");

@@ -74,6 +74,7 @@ void UzytkownikManager::wczytajUzytkownikowZPliku()
     uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
 }
 
+
 int UzytkownikManager:: logowanieUzytkownika()
 {
 
@@ -99,6 +100,7 @@ int UzytkownikManager:: logowanieUzytkownika()
                 {
                     cout << endl << "Zalogowales sie." << endl << endl;
                     idZalogowanegoUzytkownika = uzytkownicy[i].pobierzId();
+
                     cout << idZalogowanegoUzytkownika << endl;
 
                     system("pause");
@@ -120,6 +122,9 @@ int UzytkownikManager:: logowanieUzytkownika()
 
 
 }
+
+
+
 
 
 void UzytkownikManager:: wylogowanieUzytkownika()
