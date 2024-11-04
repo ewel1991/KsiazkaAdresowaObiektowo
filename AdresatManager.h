@@ -17,6 +17,7 @@ class AdresatManager
 {
     int idZalogowanegoUzytkownika;
     vector <Adresat> adresaci;
+    int idOstatniegoAdresata;
     PlikZAdresatami plikZAdresatami;
 
 
@@ -32,6 +33,7 @@ class AdresatManager
     void ustawIdZalogowanegoUzytkownika (int noweId);
     void wyswietlWszystkichAdresatow();
     void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+    void dodajAdresata();
 
 
 

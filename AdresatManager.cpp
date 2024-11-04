@@ -9,6 +9,8 @@ void AdresatManager::ustawIdZalogowanegoUzytkownika (int noweId)
         idZalogowanegoUzytkownika = noweId;
 }
 
+
+
 void AdresatManager:: wyswietlWszystkichAdresatow()
 {
     system("cls");
@@ -43,4 +45,10 @@ void AdresatManager::wyswietlDaneAdresata(Adresat adresat)
 void AdresatManager::wczytajAdresatowZalogowanegoUzytkownikaZPliku()
 {
     adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
+}
+
+
+void AdresatManager::dodajAdresata()
+{
+
 }

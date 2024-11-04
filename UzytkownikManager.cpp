@@ -126,7 +126,6 @@ void UzytkownikManager:: wylogowanieUzytkownika()
 {
     idZalogowanegoUzytkownika = 0;
     //adresaci.clear();
-    cout << "Oto wszyscy adresaci:";
 }
 
 

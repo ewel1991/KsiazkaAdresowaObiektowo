@@ -21,8 +21,6 @@ vector <Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(
             {
                 adresat = pobierzDaneAdresata(daneJednegoAdresataOddzielonePionowymiKreskami);
                 adresaci.push_back(adresat);
-                cout << "Wypisuje id: "<<adresat.pobierzId() << endl;
-                cout << "Wypisuje imie: "<<adresat.pobierzImie() << endl;
             }
         }
         daneOstaniegoAdresataWPliku = daneJednegoAdresataOddzielonePionowymiKreskami;
@@ -34,12 +32,16 @@ vector <Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(
 
     if (daneOstaniegoAdresataWPliku != "")
     {
-        idOstatniegoAdresata = pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(daneOstaniegoAdresataWPliku);
+        idOstatniegoAdresata= pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(daneOstaniegoAdresataWPliku);
+        adresat.ustawIdOstatniegoAdresata(idOstatniegoAdresata);
 
     }
     else
-        idOstatniegoAdresata = 0;
+        adresat.ustawIdOstatniegoAdresata(idOstatniegoAdresata);
 
+
+        cout << "Id ostatniego adresata wynosi: " << adresat.pobierzIdOstatniegoAdresata();
+        system("pause");
        return adresaci;
 }
 
@@ -106,3 +108,5 @@ int PlikZAdresatami::pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(strin
     int idAdresata = MetodyPomocnicze::konwersjaStringNaInt(MetodyPomocnicze::pobierzLiczbe(daneJednegoAdresataOddzielonePionowymiKreskami, pozycjaRozpoczeciaIdAdresata));
     return idAdresata;
 }
+
+

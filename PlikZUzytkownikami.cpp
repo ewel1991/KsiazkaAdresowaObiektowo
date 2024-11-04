@@ -74,7 +74,6 @@ vector <Uzytkownik> PlikZUzytkownikami::wczytajUzytkownikowZPliku()
         {
             uzytkownik = pobierzDaneUzytkownika(daneJednegoUzytkownikaOddzielonePionowymiKreskami);
             uzytkownicy.push_back(uzytkownik);
-            //cout << "Wypisuje id: " << uzytkownik.pobierzId() << endl;
         }
         plikTekstowy.close();
     }

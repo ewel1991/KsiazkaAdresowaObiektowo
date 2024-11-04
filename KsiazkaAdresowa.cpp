@@ -36,5 +36,8 @@ void KsiazkaAdresowa::wyswietlWszystkichAdresatow()
     adresatManager.wyswietlWszystkichAdresatow();
 }
 
-
+void KsiazkaAdresowa::dodajAdresata()
+{
+    adresatManager.dodajAdresata();
+}
 

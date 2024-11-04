@@ -27,10 +27,11 @@ public:
     void logowanieUzytkownika();
     void wylogowanieUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
+    void dodajAdresata();
     void wypiszWszystkichUzytkownikow();
     void wyswietlWszystkichAdresatow();
 
-    void dodajAdresata();
+    //void dodajAdresata();
     void wypiszWszystkichAdresatow();
 
 };
