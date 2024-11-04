@@ -7,8 +7,14 @@ void KsiazkaAdresowa::rejestracjaUzytkownika()
 
 void KsiazkaAdresowa::logowanieUzytkownika()
 {
-    uzytkownikManager.logowanieUzytkownika();
+    idZalogowanegoUzytkownika= uzytkownikManager.logowanieUzytkownika();
+    cout << idZalogowanegoUzytkownika << endl;
+    adresatManager.ustawIdZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
+    adresatManager.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+    adresatManager.wyswietlWszystkichAdresatow();
+
 }
+
 
 void KsiazkaAdresowa::wypiszWszystkichUzytkownikow()
 {
@@ -25,8 +31,10 @@ void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika()
     uzytkownikManager.zmianaHaslaZalogowanegoUzytkownika();
 }
 
-
-
+void KsiazkaAdresowa::wyswietlWszystkichAdresatow()
+{
+    adresatManager.wyswietlWszystkichAdresatow();
+}
 
 
 

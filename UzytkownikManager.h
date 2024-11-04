@@ -8,8 +8,8 @@
 #include <sstream>
 
 #include "Uzytkownik.h"
-#include "PlikZUzytkownikami.h"
 #include "AdresatManager.h"
+#include "PlikZUzytkownikami.h"
 
 using namespace std;
 
@@ -17,24 +17,28 @@ class UzytkownikManager
 {
     int idZalogowanegoUzytkownika;
     vector <Uzytkownik> uzytkownicy;
-    vector <Adresat> adresaci;
 
+    PlikZUzytkownikami plikZUzytkownikami;
 
     Uzytkownik podajDaneNowegoUzytkownika();
     int pobierzIdNowegoUzytkownika();
     bool czyIstniejeLogin(string login);
-    PlikZUzytkownikami plikZUzytkownikami;
 
 
     public:
-    UzytkownikManager(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami (nazwaPlikuZUzytkownikami) {}
+    UzytkownikManager(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami (nazwaPlikuZUzytkownikami)
+    {
+    idZalogowanegoUzytkownika = 0;
+    };
     void rejestracjaUzytkownika();
     int logowanieUzytkownika();
     void wylogowanieUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
     void wypiszWszystkichUzytkownikow();
     void wczytajUzytkownikowZPliku();
-    void ustawIdZalogowanegoUzytkownika(int noweId);
+    void ustawIdZalogowanegoUzytkownika (int noweeId);
+    int pobierzIdZalogowanegoUzytkownika();
+
 };
 
 #endif
