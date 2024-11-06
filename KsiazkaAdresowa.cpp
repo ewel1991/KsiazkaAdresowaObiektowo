@@ -12,7 +12,6 @@ void KsiazkaAdresowa::logowanieUzytkownika()
 
     adresatManager.ustawIdZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
     adresatManager.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
-    adresatManager.wyswietlWszystkichAdresatow();
 
 }
 

@@ -14,9 +14,11 @@ int main()
 
     ksiazkaAdresowa.logowanieUzytkownika();
 
+    ksiazkaAdresowa.wyswietlWszystkichAdresatow();
+
     //ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
 
-    //ksiazkaAdresowa.dodajAdresata();
+    ksiazkaAdresowa.dodajAdresata();
 
     ksiazkaAdresowa.wyswietlWszystkichAdresatow();
 
