@@ -17,8 +17,10 @@ using namespace std;
 class AdresatManager
 {
     int idZalogowanegoUzytkownika;
-    vector <Adresat> adresaci;
     int idOstatniegoAdresata;
+
+    vector <Adresat> adresaci;
+
     PlikZAdresatami plikZAdresatami;
     Adresat adresat;
 
