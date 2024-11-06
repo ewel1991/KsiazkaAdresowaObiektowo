@@ -33,9 +33,11 @@ class AdresatManager
     };
 
     void ustawIdZalogowanegoUzytkownika (int noweId);
+    void ustawIdOstatniegoAdresata (int noweId);
+    int pobierzIdOstatniegoAdresata();
     void wyswietlWszystkichAdresatow();
     void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
-    int dodajAdresata();
+    void dodajAdresata();
     Adresat podajDaneNowegoAdresata();
 
 

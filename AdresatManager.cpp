@@ -9,6 +9,16 @@ void AdresatManager::ustawIdZalogowanegoUzytkownika (int noweId)
         idZalogowanegoUzytkownika = noweId;
 }
 
+void AdresatManager::ustawIdOstatniegoAdresata (int noweId)
+{
+    if (noweId >=0)
+        idOstatniegoAdresata = noweId;
+}
+
+int AdresatManager::pobierzIdOstatniegoAdresata()
+{
+    return idOstatniegoAdresata;
+}
 
 void AdresatManager:: wyswietlWszystkichAdresatow()
 {
@@ -47,7 +57,7 @@ void AdresatManager::wczytajAdresatowZalogowanegoUzytkownikaZPliku()
 }
 
 
-int AdresatManager::dodajAdresata()
+void AdresatManager::dodajAdresata()
 {
 
     system("cls");
@@ -57,17 +67,20 @@ int AdresatManager::dodajAdresata()
     adresaci.push_back(adresat);
     //dopiszAdresataDoPliku(adresat);
 
-    return ++idOstatniegoAdresata;
+    ustawIdOstatniegoAdresata(++idOstatniegoAdresata);
+
 }
 
 Adresat AdresatManager::podajDaneNowegoAdresata()
 {
     string imie = "", nazwisko = "";
-    int idOstatniegoAdresa;
-    idOstatniegoAdresata = adresat.pobierzIdOstatniegoAdresata();
+    //int idOstatniegoAdresa;
+    //idOstatniegoAdresata = adresat.pobierzIdOstatniegoAdresata();
+    ustawIdOstatniegoAdresata(plikZAdresatami.pobierzIdOstatniegoAdresata());
     cout << idOstatniegoAdresata << endl;
 
     adresat.ustawId (++idOstatniegoAdresata);
+    cout << adresat.pobierzId() << endl;
     adresat.ustawIdUzytkownika (idZalogowanegoUzytkownika);
 
     cout << "Podaj imie: ";

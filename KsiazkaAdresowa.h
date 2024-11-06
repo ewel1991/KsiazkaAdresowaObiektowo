@@ -34,6 +34,7 @@ public:
     //void dodajAdresata();
     void wypiszWszystkichAdresatow();
 
+
 };
 
 #endif

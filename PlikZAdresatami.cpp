@@ -5,7 +5,6 @@ vector <Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(
 {
     Adresat adresat;
     vector <Adresat> adresaci;
-    int idOstatniegoAdresata = 0;
     string daneJednegoAdresataOddzielonePionowymiKreskami = "";
     string daneOstaniegoAdresataWPliku = "";
 
@@ -32,15 +31,17 @@ vector <Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(
 
     if (daneOstaniegoAdresataWPliku != "")
     {
-        idOstatniegoAdresata= pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(daneOstaniegoAdresataWPliku);
-        adresat.ustawIdOstatniegoAdresata(idOstatniegoAdresata);
+        ustawIdOstatniegoAdresata(pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(daneOstaniegoAdresataWPliku));
+        //adresat.ustawIdOstatniegoAdresata(idOstatniegoAdresata);
 
     }
     else
-        adresat.ustawIdOstatniegoAdresata(idOstatniegoAdresata);
+
+        ustawIdOstatniegoAdresata(0);
+        //adresat.ustawIdOstatniegoAdresata(idOstatniegoAdresata);
 
 
-        cout << "Id ostatniego adresata wynosi: " << adresat.pobierzIdOstatniegoAdresata();
+        cout << "Id ostatniego adresata wynosi: " << pobierzIdOstatniegoAdresata();
         system("pause");
        return adresaci;
 }
@@ -110,3 +111,14 @@ int PlikZAdresatami::pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(strin
 }
 
 
+int PlikZAdresatami::pobierzIdOstatniegoAdresata()
+{
+    return idOstatniegoAdresata;
+}
+
+
+void PlikZAdresatami::ustawIdOstatniegoAdresata (int noweId)
+{
+    if (noweId >=0)
+        idOstatniegoAdresata = noweId;
+}
