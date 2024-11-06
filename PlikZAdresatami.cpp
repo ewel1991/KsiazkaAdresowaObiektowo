@@ -32,13 +32,12 @@ vector <Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(
     if (daneOstaniegoAdresataWPliku != "")
     {
         ustawIdOstatniegoAdresata(pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(daneOstaniegoAdresataWPliku));
-        //adresat.ustawIdOstatniegoAdresata(idOstatniegoAdresata);
 
     }
     else
 
         ustawIdOstatniegoAdresata(0);
-        //adresat.ustawIdOstatniegoAdresata(idOstatniegoAdresata);
+
 
 
         cout << "Id ostatniego adresata wynosi: " << pobierzIdOstatniegoAdresata();

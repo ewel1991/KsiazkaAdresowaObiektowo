@@ -2,7 +2,6 @@
 #define PLIKZADRESATAMI_h
 
 
-
 #include <iostream>
 #include <vector>
 #include <fstream>

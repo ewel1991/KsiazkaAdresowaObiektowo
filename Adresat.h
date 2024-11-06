@@ -19,7 +19,6 @@ class Adresat
 public:
 
     void ustawId (int noweId);
-    void ustawIdOstatniegoAdresata (int noweId);
     void ustawIdUzytkownika (int noweIdUzytkownika);
     void ustawImie (string noweImie);
     void ustawNazwisko (string noweNazwisko);
@@ -30,7 +29,6 @@ public:
 
     int pobierzId();
     int pobierzIdUzytkownika();
-    int pobierzIdOstatniegoAdresata();
     int pobierzIdZalogowanegoUzytkownika();
     string pobierzImie();
     string pobierzNazwisko();

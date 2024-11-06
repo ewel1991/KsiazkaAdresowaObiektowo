@@ -6,11 +6,6 @@ void Adresat::ustawId (int noweId)
         id = noweId;
 }
 
-void Adresat::ustawIdOstatniegoAdresata (int noweId)
-{
-    if (noweId >=0)
-        idOstatniegoAdresata = noweId;
-}
 
 void Adresat::ustawIdUzytkownika (int noweIdUzytkownika)
 {
@@ -48,10 +43,6 @@ int Adresat::pobierzId()
     return id;
 }
 
-int Adresat::pobierzIdOstatniegoAdresata()
-{
-    return idOstatniegoAdresata;
-}
 
 
 int Adresat::pobierzIdUzytkownika()
