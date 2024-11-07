@@ -44,6 +44,7 @@ int Adresat::pobierzId()
 }
 
 
+
 int Adresat::pobierzIdUzytkownika()
 {
     return idUzytkownika;

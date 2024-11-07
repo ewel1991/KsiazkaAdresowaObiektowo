@@ -7,6 +7,13 @@ void Uzytkownik::ustawId (int noweId)
 }
 
 
+void Uzytkownik::ustawIdZalogowanegoUzytkownika (int noweId)
+{
+    if (noweId >=0)
+        idZalogowanegoUzytkownika = noweId;
+}
+
+
 void Uzytkownik::ustawLogin(string nowyLogin)
 {
     login = nowyLogin;
@@ -19,6 +26,11 @@ void Uzytkownik::ustawHaslo(string noweHaslo)
 int Uzytkownik::pobierzId()
 {
     return id;
+}
+
+int Uzytkownik::pobierzIdZalogowanegoUzytkownika()
+{
+    return idZalogowanegoUzytkownika;
 }
 
 

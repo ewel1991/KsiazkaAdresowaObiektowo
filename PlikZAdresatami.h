@@ -2,7 +2,6 @@
 #define PLIKZADRESATAMI_h
 
 
-
 #include <iostream>
 #include <vector>
 #include <fstream>
@@ -16,13 +15,13 @@ using namespace std;
 class PlikZAdresatami
 {
     const string nazwaPlikuZAdresatami;
+    int idOstatniegoAdresata;
 
-    //string zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(Uzytkownik uzytkownik);
-    //bool czyPlikJestPusty();
-    //Uzytkownik pobierzDaneUzytkownika(string daneJednegoUzytkownikaOddzielonePionowymiKreskami);
     int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
     Adresat pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami);
     int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
+    string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
+    bool czyPlikJestPusty(fstream &plikTekstowy);
 
 public:
 
@@ -32,8 +31,10 @@ public:
     };
 
     vector <Adresat> wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
-    //void dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik);
-    //vector <Uzytkownik> wczytajUzytkownikowZPliku();
+    void ustawIdOstatniegoAdresata (int noweId);
+    int pobierzIdOstatniegoAdresata();
+    void dopiszAdresataDoPliku(Adresat adresat);
+
 
 };
 

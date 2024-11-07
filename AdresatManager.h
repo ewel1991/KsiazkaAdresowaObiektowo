@@ -9,6 +9,7 @@
 #include <cstdlib>
 
 #include "Adresat.h"
+#include "Uzytkownik.h"
 #include "PlikZAdresatami.h"
 
 using namespace std;
@@ -16,8 +17,12 @@ using namespace std;
 class AdresatManager
 {
     int idZalogowanegoUzytkownika;
+    int idOstatniegoAdresata;
+
     vector <Adresat> adresaci;
+
     PlikZAdresatami plikZAdresatami;
+    Adresat adresat;
 
 
     void wyswietlDaneAdresata(Adresat adresat);
@@ -30,8 +35,13 @@ class AdresatManager
     };
 
     void ustawIdZalogowanegoUzytkownika (int noweId);
+    void ustawIdOstatniegoAdresata (int noweId);
+    int pobierzIdOstatniegoAdresata();
     void wyswietlWszystkichAdresatow();
     void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+    void dodajAdresata();
+    void wylogowanie();
+    Adresat podajDaneNowegoAdresata();
 
 
 
