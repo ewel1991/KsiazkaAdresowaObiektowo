@@ -1,6 +1,6 @@
 #include "PlikZUzytkownikami.h"
 
-
+/*
 string PlikZUzytkownikami::konwerjsaIntNaString(int liczba)
 {
     ostringstream ss;
@@ -8,7 +8,7 @@ string PlikZUzytkownikami::konwerjsaIntNaString(int liczba)
     string str = ss.str();
     return str;
 }
-
+*/
 
 
 bool PlikZUzytkownikami::czyPlikJestPusty()
