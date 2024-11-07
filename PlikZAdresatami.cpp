@@ -38,9 +38,6 @@ vector <Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(
 
         ustawIdOstatniegoAdresata(0);
 
-
-
-        cout << "Id ostatniego adresata wynosi: " << pobierzIdOstatniegoAdresata();
         system("pause");
        return adresaci;
 }

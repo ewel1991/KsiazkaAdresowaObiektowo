@@ -17,6 +17,7 @@ class MetodyPomocnicze
     static int konwersjaStringNaInt(string liczba);
     static string wczytajLinie();
     static string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
+    static char wczytajZnak();
 };
 
 #endif

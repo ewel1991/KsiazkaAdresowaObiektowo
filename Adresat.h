@@ -9,7 +9,6 @@ class Adresat
 {
     int id;
     int idUzytkownika;
-    int idOstatniegoAdresata;
     string imie;
     string nazwisko;
     string numerTelefonu;

@@ -15,6 +15,8 @@ class KsiazkaAdresowa
     UzytkownikManager uzytkownikManager;
     AdresatManager adresatManager;
     int idZalogowanegoUzytkownika;
+    char wybor;
+
 
 public:
     KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami)
@@ -23,16 +25,18 @@ public:
         uzytkownikManager.wczytajUzytkownikowZPliku();
     };
 
+    char wybierzOpcjeZMenuGlownego();
+    char wybierzOpcjeZMenuUzytkownika();
+
     void rejestracjaUzytkownika();
     void logowanieUzytkownika();
-    void wylogowanieUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
     void dodajAdresata();
-    void wypiszWszystkichUzytkownikow();
     void wyswietlWszystkichAdresatow();
-
-    //void dodajAdresata();
     void wypiszWszystkichAdresatow();
+    int wylogowanie();
+
+    bool czyUzytkownikJestZalogowany();
 
 
 };

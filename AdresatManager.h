@@ -40,6 +40,7 @@ class AdresatManager
     void wyswietlWszystkichAdresatow();
     void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
     void dodajAdresata();
+    void wylogowanie();
     Adresat podajDaneNowegoAdresata();
 
 

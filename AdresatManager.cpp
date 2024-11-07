@@ -74,13 +74,9 @@ void AdresatManager::dodajAdresata()
 Adresat AdresatManager::podajDaneNowegoAdresata()
 {
     string imie = "", nazwisko = "";
-    //int idOstatniegoAdresa;
-    //idOstatniegoAdresata = adresat.pobierzIdOstatniegoAdresata();
     ustawIdOstatniegoAdresata(plikZAdresatami.pobierzIdOstatniegoAdresata());
-    cout << idOstatniegoAdresata << endl;
 
     adresat.ustawId (++idOstatniegoAdresata);
-    cout << adresat.pobierzId() << endl;
     adresat.ustawIdUzytkownika (idZalogowanegoUzytkownika);
 
     cout << "Podaj imie: ";
@@ -103,3 +99,10 @@ Adresat AdresatManager::podajDaneNowegoAdresata()
     return adresat;
 }
 
+
+void AdresatManager::wylogowanie()
+{
+
+    adresaci.clear();
+
+}

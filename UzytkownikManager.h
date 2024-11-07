@@ -32,12 +32,13 @@ class UzytkownikManager
     };
     void rejestracjaUzytkownika();
     int logowanieUzytkownika();
-    void wylogowanieUzytkownika();
+    int wylogowanieUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
     void wypiszWszystkichUzytkownikow();
     void wczytajUzytkownikowZPliku();
     void ustawIdZalogowanegoUzytkownika (int noweeId);
     int pobierzIdZalogowanegoUzytkownika();
+    bool czyUzytkownikJestZalogowany();
 
 };
 
