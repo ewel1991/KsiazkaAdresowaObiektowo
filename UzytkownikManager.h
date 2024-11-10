@@ -29,6 +29,8 @@ class UzytkownikManager
     UzytkownikManager(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami (nazwaPlikuZUzytkownikami)
     {
     idZalogowanegoUzytkownika = 0;
+    wczytajUzytkownikowZPliku();
+
     };
     void rejestracjaUzytkownika();
     int logowanieUzytkownika();

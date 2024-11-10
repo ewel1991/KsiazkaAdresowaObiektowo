@@ -1,15 +1,5 @@
 #include "PlikZUzytkownikami.h"
 
-/*
-string PlikZUzytkownikami::konwerjsaIntNaString(int liczba)
-{
-    ostringstream ss;
-    ss << liczba;
-    string str = ss.str();
-    return str;
-}
-*/
-
 
 bool PlikZUzytkownikami::czyPlikJestPusty()
 {

@@ -22,7 +22,7 @@ public:
     KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami)
         : uzytkownikManager(nazwaPlikuZUzytkownikami), adresatManager(nazwaPlikuZAdresatami)
     {
-        uzytkownikManager.wczytajUzytkownikowZPliku();
+
     };
 
     char wybierzOpcjeZMenuGlownego();
