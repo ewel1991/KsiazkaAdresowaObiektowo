@@ -4,11 +4,9 @@
 #include <iostream>
 #include <vector>
 #include <windows.h>
-#include <fstream>
 #include <sstream>
 
 #include "Uzytkownik.h"
-#include "AdresatManager.h"
 #include "PlikZUzytkownikami.h"
 
 using namespace std;
@@ -29,13 +27,14 @@ class UzytkownikManager
     UzytkownikManager(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami (nazwaPlikuZUzytkownikami)
     {
     idZalogowanegoUzytkownika = 0;
+    uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
+
     };
     void rejestracjaUzytkownika();
     int logowanieUzytkownika();
-    int wylogowanieUzytkownika();
+    void wylogowanieUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
     void wypiszWszystkichUzytkownikow();
-    void wczytajUzytkownikowZPliku();
     void ustawIdZalogowanegoUzytkownika (int noweeId);
     int pobierzIdZalogowanegoUzytkownika();
     bool czyUzytkownikJestZalogowany();

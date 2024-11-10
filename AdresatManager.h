@@ -4,43 +4,40 @@
 #include <iostream>
 #include <vector>
 #include <windows.h>
-#include <fstream>
 #include <sstream>
 #include <cstdlib>
 
 #include "Adresat.h"
-#include "Uzytkownik.h"
 #include "PlikZAdresatami.h"
 
 using namespace std;
 
 class AdresatManager
 {
-    int idZalogowanegoUzytkownika;
-    int idOstatniegoAdresata;
+    const int ID_ZALOGOWANEGO_UZYTKOWNIKA;
 
     vector <Adresat> adresaci;
-
     PlikZAdresatami plikZAdresatami;
-    Adresat adresat;
-
 
     void wyswietlDaneAdresata(Adresat adresat);
 
 
-    public:
-    AdresatManager(string nazwaPlikuZAdresatami) :
-        plikZAdresatami (nazwaPlikuZAdresatami)
+public:
+    AdresatManager(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika) :
+        plikZAdresatami (nazwaPlikuZAdresatami), ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika)
     {
-    };
 
-    void ustawIdZalogowanegoUzytkownika (int noweId);
-    void ustawIdOstatniegoAdresata (int noweId);
-    int pobierzIdOstatniegoAdresata();
+        adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
+    }
+
+
+    //void ustawIdZalogowanegoUzytkownika (int noweId);
+    //void ustawIdOstatniegoAdresata (int noweId);
+    //int pobierzIdOstatniegoAdresata();
     void wyswietlWszystkichAdresatow();
-    void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+    //void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
     void dodajAdresata();
-    void wylogowanie();
+    //void wylogowanie();
     Adresat podajDaneNowegoAdresata();
 
 

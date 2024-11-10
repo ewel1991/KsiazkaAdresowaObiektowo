@@ -49,9 +49,12 @@ void KsiazkaAdresowa::rejestracjaUzytkownika()
 
 void KsiazkaAdresowa::logowanieUzytkownika()
 {
-    idZalogowanegoUzytkownika= uzytkownikManager.logowanieUzytkownika();
-    adresatManager.ustawIdZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
-    adresatManager.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+    uzytkownikManager.logowanieUzytkownika();
+
+    if( uzytkownikManager.czyUzytkownikJestZalogowany())
+    {
+        adresatManager = new AdresatManager (NAZWA_PLIKU_Z_ADRESATAMI, uzytkownikManager.pobierzIdZalogowanegoUzytkownika());
+    }
 
 }
 
@@ -63,28 +66,38 @@ void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika()
 
 void KsiazkaAdresowa::wyswietlWszystkichAdresatow()
 {
-    adresatManager.wyswietlWszystkichAdresatow();
+    if (uzytkownikManager.czyUzytkownikJestZalogowany())
+    {
+        adresatManager->wyswietlWszystkichAdresatow();
+    }
+    else
+    {
+        cout << "Aby wyswietlic adresatow, nalezy najpierw sie zalogowac" << endl;
+        system ("pause");
+    }
 }
 
 void KsiazkaAdresowa::dodajAdresata()
 {
-    adresatManager.dodajAdresata();
+    if (uzytkownikManager.czyUzytkownikJestZalogowany())
+    {
+        adresatManager->dodajAdresata();
+    }
+    else
+    {
+        cout << "Aby dodac adresata, nalezy najpierw sie zalogowac" << endl;
+        system ("pause");
+    }
+
 }
 
 
-int KsiazkaAdresowa::wylogowanie()
+void KsiazkaAdresowa::wylogowanie()
 {
 
-    if (uzytkownikManager.czyUzytkownikJestZalogowany())
-    {
-        idZalogowanegoUzytkownika = uzytkownikManager.wylogowanieUzytkownika();
-        adresatManager.wylogowanie();
-        return idZalogowanegoUzytkownika;
-    }
-    else
-        cout << "Nie jestes zalogowany" <<endl;
-
-    return 0;
+    uzytkownikManager.wylogowanieUzytkownika();
+    delete adresatManager;
+    adresatManager = NULL;
 
 }
 
