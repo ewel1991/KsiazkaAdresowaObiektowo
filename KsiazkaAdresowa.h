@@ -13,17 +13,27 @@ class KsiazkaAdresowa
 {
 
     UzytkownikManager uzytkownikManager;
-    AdresatManager adresatManager;
-    int idZalogowanegoUzytkownika;
-    char wybor;
+
+    AdresatManager *adresatManager;
+
+    const string NAZWA_PLIKU_Z_ADRESATAMI;
+
 
 
 public:
     KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami)
-        : uzytkownikManager(nazwaPlikuZUzytkownikami), adresatManager(nazwaPlikuZAdresatami)
+        : uzytkownikManager(nazwaPlikuZUzytkownikami), NAZWA_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami)
     {
-
+        adresatManager = NULL;
     };
+
+    ~KsiazkaAdresowa()
+    {
+        delete adresatManager;
+        adresatManager = NULL;
+    }
+
+
 
     char wybierzOpcjeZMenuGlownego();
     char wybierzOpcjeZMenuUzytkownika();
@@ -34,7 +44,7 @@ public:
     void dodajAdresata();
     void wyswietlWszystkichAdresatow();
     void wypiszWszystkichAdresatow();
-    int wylogowanie();
+    void wylogowanie();
 
     bool czyUzytkownikJestZalogowany();
 

@@ -27,13 +27,13 @@ public:
 
     PlikZAdresatami(string nazwaPlikuZAdresatami) :  NAZWA_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami)
     {
-
+        idOstatniegoAdresata = 0;
     };
 
     vector <Adresat> wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
     void ustawIdOstatniegoAdresata (int noweId);
     int pobierzIdOstatniegoAdresata();
-    void dopiszAdresataDoPliku(Adresat adresat);
+    bool dopiszAdresataDoPliku(Adresat adresat);
 
 
 };

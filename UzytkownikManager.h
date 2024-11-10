@@ -4,11 +4,9 @@
 #include <iostream>
 #include <vector>
 #include <windows.h>
-#include <fstream>
 #include <sstream>
 
 #include "Uzytkownik.h"
-#include "AdresatManager.h"
 #include "PlikZUzytkownikami.h"
 
 using namespace std;
@@ -34,7 +32,7 @@ class UzytkownikManager
     };
     void rejestracjaUzytkownika();
     int logowanieUzytkownika();
-    int wylogowanieUzytkownika();
+    void wylogowanieUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
     void wypiszWszystkichUzytkownikow();
     void ustawIdZalogowanegoUzytkownika (int noweeId);

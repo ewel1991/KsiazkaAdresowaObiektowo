@@ -156,8 +156,7 @@ bool UzytkownikManager:: czyUzytkownikJestZalogowany()
         return false;
 }
 
-int UzytkownikManager::wylogowanieUzytkownika()
+void UzytkownikManager::wylogowanieUzytkownika()
 {
     idZalogowanegoUzytkownika = 0;
-    return idZalogowanegoUzytkownika;
 }
