@@ -29,7 +29,7 @@ class UzytkownikManager
     UzytkownikManager(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami (nazwaPlikuZUzytkownikami)
     {
     idZalogowanegoUzytkownika = 0;
-    wczytajUzytkownikowZPliku();
+    uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
 
     };
     void rejestracjaUzytkownika();
@@ -37,7 +37,6 @@ class UzytkownikManager
     int wylogowanieUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
     void wypiszWszystkichUzytkownikow();
-    void wczytajUzytkownikowZPliku();
     void ustawIdZalogowanegoUzytkownika (int noweeId);
     int pobierzIdZalogowanegoUzytkownika();
     bool czyUzytkownikJestZalogowany();
