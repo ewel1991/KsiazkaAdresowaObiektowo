@@ -33,15 +33,11 @@ public:
     }
 
 
-    //void ustawIdZalogowanegoUzytkownika (int noweId);
-    //void ustawIdOstatniegoAdresata (int noweId);
-    //int pobierzIdOstatniegoAdresata();
+
     void wyswietlWszystkichAdresatow();
-    //void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
     void dodajAdresata();
     void usunAdresata();
     int pobierzIdUsunietegoAdresata();
-    //void wylogowanie();
     Adresat podajDaneNowegoAdresata();
     int podajIdWybranegoAdresata();
     int podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(int idUsuwanegoAdresata);
