@@ -19,6 +19,8 @@ class AdresatManager
     vector <Adresat> adresaci;
     PlikZAdresatami plikZAdresatami;
 
+    int idUsuwanegoAdresata;
+
     void wyswietlDaneAdresata(Adresat adresat);
 
 
@@ -31,14 +33,14 @@ public:
     }
 
 
-    //void ustawIdZalogowanegoUzytkownika (int noweId);
-    //void ustawIdOstatniegoAdresata (int noweId);
-    //int pobierzIdOstatniegoAdresata();
+
     void wyswietlWszystkichAdresatow();
-    //void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
     void dodajAdresata();
-    //void wylogowanie();
+    void usunAdresata();
+    int pobierzIdUsunietegoAdresata();
     Adresat podajDaneNowegoAdresata();
+    int podajIdWybranegoAdresata();
+    int podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(int idUsuwanegoAdresata);
 
 
 
