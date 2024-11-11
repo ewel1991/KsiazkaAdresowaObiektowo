@@ -106,3 +106,11 @@ bool KsiazkaAdresowa::czyUzytkownikJestZalogowany()
 {
     uzytkownikManager.czyUzytkownikJestZalogowany();
 }
+
+
+
+void KsiazkaAdresowa::usunAdresata()
+{
+    adresatManager->usunAdresata();
+
+}
