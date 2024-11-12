@@ -253,17 +253,18 @@ void PlikZAdresatami::zmienNazwePliku(string staraNazwa, string nowaNazwa)
 }
 
 
-void PlikZAdresatami::zaktualizujDaneWybranegoAdresata(Adresat adresat, int idEdytowanegoAdresata)
+void PlikZAdresatami::zaktualizujDaneWybranegoAdresata(Adresat adresat)
 {
     int numerLiniiEdytowanegoAdresata = 0;
+    int idEdytowanegoAdresata = 0;
     string liniaZDanymiAdresata = "";
 
-    numerLiniiEdytowanegoAdresata = zwrocNumerLiniiSzukanegoAdresata(idEdytowanegoAdresata);
-    liniaZDanymiAdresata = zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(adresat);
-    edytujWybranaLinieWPliku(numerLiniiEdytowanegoAdresata, liniaZDanymiAdresata);
+    edytujWybranaLinieWPliku(adresat);
 
     cout << endl << "Dane zostaly zaktualizowane." << endl << endl;
 }
+
+
 
 int PlikZAdresatami::zwrocNumerLiniiSzukanegoAdresata(int idAdresata)
 {
@@ -296,12 +297,13 @@ int PlikZAdresatami::zwrocNumerLiniiSzukanegoAdresata(int idAdresata)
 }
 
 
-void PlikZAdresatami::edytujWybranaLinieWPliku(int numerEdytowanejLinii, string liniaZDanymiAdresataOddzielonePionowymiKreskami)
+void PlikZAdresatami::edytujWybranaLinieWPliku(Adresat adresat)
 {
     fstream odczytywanyPlikTekstowy, tymczasowyPlikTekstowy;
     string nazwaTymczasowegoPlikuZAdresatami = "Adresaci_tymczasowo.txt";
     string wczytanaLinia = "";
     int numerWczytanejLinii = 1;
+    int numerEdytowanejLinii = 0;
 
     odczytywanyPlikTekstowy.open(NAZWA_PLIKU_Z_ADRESATAMI.c_str(), ios::in);
     tymczasowyPlikTekstowy.open(nazwaTymczasowegoPlikuZAdresatami.c_str(), ios::out | ios::app);
@@ -310,12 +312,17 @@ void PlikZAdresatami::edytujWybranaLinieWPliku(int numerEdytowanejLinii, string 
     {
         while (getline(odczytywanyPlikTekstowy, wczytanaLinia))
         {
+            if(adresat.pobierzId() == pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(wczytanaLinia))
+            {
+                numerEdytowanejLinii =  numerWczytanejLinii;
+            }
+
             if (numerWczytanejLinii == numerEdytowanejLinii)
             {
                 if (numerWczytanejLinii == 1)
-                    tymczasowyPlikTekstowy << liniaZDanymiAdresataOddzielonePionowymiKreskami;
+                    tymczasowyPlikTekstowy << zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(adresat);
                 else if (numerWczytanejLinii > 1)
-                    tymczasowyPlikTekstowy << endl << liniaZDanymiAdresataOddzielonePionowymiKreskami;
+                    tymczasowyPlikTekstowy << endl << zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(adresat);
             }
             else
             {
