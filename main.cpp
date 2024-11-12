@@ -42,7 +42,6 @@ int main()
         else
         {
 
-
             wybor = ksiazkaAdresowa.wybierzOpcjeZMenuUzytkownika();
 
             switch (wybor)
@@ -70,6 +69,7 @@ int main()
                 break;
 
             case '6':
+                ksiazkaAdresowa.edytujAdresata();
                 //edytujAdresata(adresaci);
                 break;
             case '7':

@@ -22,6 +22,7 @@ class AdresatManager
     int idUsuwanegoAdresata;
 
     void wyswietlDaneAdresata(Adresat adresat);
+    char wybierzOpcjeZMenuEdycja();
 
 
 public:
@@ -36,11 +37,13 @@ public:
 
     void wyswietlWszystkichAdresatow();
     void dodajAdresata();
+    void edytujAdresata();
     void usunAdresata();
     int pobierzIdUsunietegoAdresata();
     Adresat podajDaneNowegoAdresata();
     int podajIdWybranegoAdresata();
     int podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(int idUsuwanegoAdresata);
+
 
 
 
