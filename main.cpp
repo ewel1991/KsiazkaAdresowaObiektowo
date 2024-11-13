@@ -52,7 +52,7 @@ int main()
                 break;
 
             case '2':
-                //wyszukajAdresatowPoImieniu(adresaci);
+                ksiazkaAdresowa.wyszukajAdresatowPoImieniu();
                 break;
 
             case '3':

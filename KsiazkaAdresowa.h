@@ -46,6 +46,7 @@ public:
     void edytujAdresata();
     void wyswietlWszystkichAdresatow();
     void wypiszWszystkichAdresatow();
+    void wyszukajAdresatowPoImieniu();
 
     void usunAdresata();
 
