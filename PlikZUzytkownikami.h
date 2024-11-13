@@ -10,15 +10,17 @@
 
 #include "Uzytkownik.h"
 #include "MetodyPomocnicze.h"
+#include "PlikTekstowy.h"
+
+class PlikTekstowy;
 
 using namespace std;
 
-class PlikZUzytkownikami
+class PlikZUzytkownikami: public PlikTekstowy
 {
     const string NAZWA_PLIKU_Z_UZYTKOWNIKAMI;
 
     string zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(Uzytkownik uzytkownik);
-    bool czyPlikJestPusty();
     Uzytkownik pobierzDaneUzytkownika(string daneJednegoUzytkownikaOddzielonePionowymiKreskami);
 
 
