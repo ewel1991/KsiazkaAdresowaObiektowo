@@ -46,9 +46,9 @@ public:
     void edytujAdresata();
     void wyswietlWszystkichAdresatow();
     void wypiszWszystkichAdresatow();
-
+    void wyszukajAdresatowPoImieniu();
+    void wyszukajAdresatowPoNazwisku();
     void usunAdresata();
-
     void wylogowanie();
     bool czyUzytkownikJestZalogowany();
 

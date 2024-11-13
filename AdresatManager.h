@@ -22,6 +22,7 @@ class AdresatManager
     int idUsuwanegoAdresata;
 
     void wyswietlDaneAdresata(Adresat adresat);
+    void wyswietlIloscWyszukanychAdresatow(int iloscAdresatow);
     char wybierzOpcjeZMenuEdycja();
 
 
@@ -43,7 +44,8 @@ public:
     Adresat podajDaneNowegoAdresata();
     int podajIdWybranegoAdresata();
     int podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(int idUsuwanegoAdresata);
-
+    void wyszukajAdresatowPoImieniu();
+    void wyszukajAdresatowPoNazwisku();
 
 
 

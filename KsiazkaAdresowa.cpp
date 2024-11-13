@@ -121,3 +121,15 @@ void KsiazkaAdresowa::edytujAdresata()
     adresatManager->edytujAdresata();
 
 }
+
+
+void KsiazkaAdresowa::wyszukajAdresatowPoImieniu()
+{
+    adresatManager->wyszukajAdresatowPoImieniu();
+}
+
+
+void KsiazkaAdresowa::wyszukajAdresatowPoNazwisku()
+{
+    adresatManager->wyszukajAdresatowPoNazwisku();
+}
