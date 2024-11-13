@@ -304,8 +304,7 @@ void AdresatManager::wyswietlIloscWyszukanychAdresatow(int iloscAdresatow)
         cout << endl << "Ilosc adresatow w ksiazce adresowej wynosi: " << iloscAdresatow << endl << endl;
 }
 
-/*
-void wyszukajAdresatowPoNazwisku(vector <Adresat> &adresaci)
+void AdresatManager::wyszukajAdresatowPoNazwisku()
 {
     string nazwiskoPoszukiwanegoAdresata;
     int iloscAdresatow = 0;
@@ -316,12 +315,12 @@ void wyszukajAdresatowPoNazwisku(vector <Adresat> &adresaci)
         cout << ">>> WYSZUKIWANIE ADRESATOW O NAZWISKU <<<" << endl << endl;
 
         cout << "Wyszukaj adresatow o nazwisku: ";
-        nazwiskoPoszukiwanegoAdresata = wczytajLinie();
-        nazwiskoPoszukiwanegoAdresata = zamienPierwszaLitereNaDuzaAPozostaleNaMale(nazwiskoPoszukiwanegoAdresata);
+        nazwiskoPoszukiwanegoAdresata = MetodyPomocnicze::wczytajLinie();
+        nazwiskoPoszukiwanegoAdresata = MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(nazwiskoPoszukiwanegoAdresata);
 
         for (vector <Adresat>::iterator itr = adresaci.begin(); itr != adresaci.end(); itr++)
         {
-            if (itr -> nazwisko == nazwiskoPoszukiwanegoAdresata)
+            if (itr -> pobierzNazwisko() == nazwiskoPoszukiwanegoAdresata)
             {
                 wyswietlDaneAdresata(*itr);
                 iloscAdresatow++;
@@ -337,4 +336,4 @@ void wyszukajAdresatowPoNazwisku(vector <Adresat> &adresaci)
     system("pause");
 }
 
-*/
+

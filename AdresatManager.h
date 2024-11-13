@@ -45,7 +45,7 @@ public:
     int podajIdWybranegoAdresata();
     int podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(int idUsuwanegoAdresata);
     void wyszukajAdresatowPoImieniu();
-    //void wyszukajAdresatowPoNazwisku();
+    void wyszukajAdresatowPoNazwisku();
 
 
 
