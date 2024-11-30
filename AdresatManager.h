@@ -19,7 +19,7 @@ class AdresatManager
     vector <Adresat> adresaci;
     PlikZAdresatami plikZAdresatami;
 
-    int idUsuwanegoAdresata;
+    //int idUsuwanegoAdresata;
 
     void wyswietlDaneAdresata(Adresat adresat);
     void wyswietlIloscWyszukanychAdresatow(int iloscAdresatow);

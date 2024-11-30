@@ -98,7 +98,7 @@ Adresat AdresatManager::podajDaneNowegoAdresata()
     return adresat;
 }
 
-
+/*
 int AdresatManager:: pobierzIdUsunietegoAdresata()
 {
     Adresat adresat;
@@ -147,6 +147,10 @@ int AdresatManager:: pobierzIdUsunietegoAdresata()
 
 }
 
+
+*/
+
+
 int AdresatManager::podajIdWybranegoAdresata()
 {
     int idWybranegoAdresata = 0;
@@ -169,8 +173,62 @@ int AdresatManager::podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(int id
 
 void AdresatManager::usunAdresata()
 {
-    idUsuwanegoAdresata = pobierzIdUsunietegoAdresata();
-    plikZAdresatami.ustawIdOstatniegoAdresata(podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(idUsuwanegoAdresata));
+    //idUsuwanegoAdresata = pobierzIdUsunietegoAdresata();
+    //plikZAdresatami.ustawIdOstatniegoAdresata(podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(idUsuwanegoAdresata));
+
+    Adresat adresat;
+
+    int idUsuwanegoAdresata = 0;
+    int numerLiniiUsuwanegoAdresata = 0;
+
+    system("cls");
+    cout << ">>> USUWANIE WYBRANEGO ADRESATA <<<" << endl << endl;
+    idUsuwanegoAdresata = podajIdWybranegoAdresata();
+
+    char znak;
+    bool czyIstniejeAdresat = false;
+
+    for (vector <Adresat>::iterator itr = adresaci.begin(); itr != adresaci.end(); itr++)
+    {
+        if (itr -> pobierzId() == idUsuwanegoAdresata)
+        {
+            czyIstniejeAdresat = true;
+            cout << endl << "Potwierdz naciskajac klawisz 't': ";
+            znak = MetodyPomocnicze::wczytajZnak();
+            if (znak == 't')
+            {
+
+                plikZAdresatami.usunWybranaLinieWPliku(idUsuwanegoAdresata);
+                plikZAdresatami.ustawIdOstatniegoAdresata(podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(idUsuwanegoAdresata));
+
+
+                adresaci.erase(itr);
+                cout << endl << endl << "Szukany adresat zostal USUNIETY" << endl << endl;
+                system("pause");
+               //return idUsuwanegoAdresata;
+               return;
+            }
+            else
+            {
+                cout << endl << endl << "Wybrany adresat NIE zostal usuniety" << endl << endl;
+                system("pause");
+                //return 0;
+                return;
+            }
+        }
+    }
+    if (czyIstniejeAdresat == false)
+    {
+        cout << endl << "Nie ma takiego adresata w ksiazce adresowej" << endl << endl;
+        system("pause");
+    }
+    //return 0;
+    return ;
+
+
+
+
+
 
 }
 
